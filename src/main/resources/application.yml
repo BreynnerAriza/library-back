@@ -1,0 +1,21 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /api/library
+spring:
+  application:
+    name: library-back
+    #CONFIGURACION CONEXIÓN A POSTGRESQL
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/library_back
+    password: 123456
+  jpa:
+    #QUE SE ACTUALICE LA BASE DE DATOS CADA QUE HAYAN CAMBIOS
+    hibernate:
+      ddl-auto: update
+    #MOSTRAR LAS CADENAS SQL
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

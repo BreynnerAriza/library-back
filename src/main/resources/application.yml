@@ -5,7 +5,7 @@ server:
 spring:
   application:
     name: library-back
-    #CONFIGURACION CONEXIÓN A POSTGRESQL
+    #CONFIGURACION CONEXIï¿½N A POSTGRESQL
   datasource:
     username: postgres
     url: jdbc:postgresql://localhost:5432/library_back
@@ -13,9 +13,20 @@ spring:
   jpa:
     #QUE SE ACTUALICE LA BASE DE DATOS CADA QUE HAYAN CAMBIOS
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     #MOSTRAR LAS CADENAS SQL
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+        #CARGA DE DATOS A TRAVï¿½S DE LOS ARCHIVOS SCRIPTS
+        hbm2ddl:
+          charset_name: UTF-8
+          import_files: scripts/role.sql, scripts/user.sql
+    generate-ddl: false
+
+# CONFIGURACIÃ“N PARA LA FIRMA DEL JWT
+jwt:
+  secret-key: 03db96010ae65496b4e7190c600f41a272d7facc1b029e64a238ee80d1b74d67
+  user: AUTH-0
+  duration-min: 20

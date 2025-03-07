@@ -1,0 +1,1 @@
+INSERT INTO main.user (user_id, username, password, status, role_id, created_at, updated_at) VALUES('77d8a453-7d0c-46e1-966f-cb7c4b3f34ea', 'moerutsuky', '$2a$10$CmiDi/UgBXMec2EvYlvriOe8kpDeHdILECk6aM/71KmSkhLc0MSzq', 'ACTIVE', '83c4d67c-82ba-4e13-abea-19516ede8edb', now(), now());

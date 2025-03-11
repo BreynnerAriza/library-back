@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Schema(description = "Representa la solicitud para un login")
-public record LoginRequest(
+public record LoginRequestDto(
 
         @Schema(description = "Representa el username del usuario", example = "usuario")
         @NotBlank(message = "El usuario es obligatorio")

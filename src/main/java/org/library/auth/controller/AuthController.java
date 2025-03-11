@@ -8,9 +8,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.connector.RequestFacade;
-import org.library.auth.dto.LoginRequest;
-import org.library.auth.dto.LoginSuccess;
+import org.library.auth.dto.RefreshTokenDto;
+import org.library.auth.dto.LoginRequestDto;
+import org.library.auth.dto.LoginSuccessDto;
 import org.library.auth.service.IAuthQryService;
 import org.library.shared.dto.RequestFailed;
 import org.springframework.http.HttpStatus;
@@ -37,10 +37,18 @@ public class AuthController {
     })
 
     @PostMapping("/login")
-    public ResponseEntity<LoginSuccess> login(@Valid @RequestBody LoginRequest loginRequest){
+    public ResponseEntity<LoginSuccessDto> login(@Valid @RequestBody LoginRequestDto loginRequestDto){
         return ResponseEntity.status(HttpStatus.OK.value()).body(
-                authQryService.login(loginRequest)
+                authQryService.login(loginRequestDto)
         );
+    }
+
+    @PostMapping("/refresh-token")
+    public ResponseEntity<LoginSuccessDto> refreshToken(@Valid @RequestBody RefreshTokenDto refreshTokenDto){
+        return null;
+                /* ResponseEntity.status(HttpStatus.CREATED.value()).body(
+
+        ); */
     }
 
 }

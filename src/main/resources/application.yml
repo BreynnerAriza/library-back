@@ -13,7 +13,7 @@ spring:
   jpa:
     #QUE SE ACTUALICE LA BASE DE DATOS CADA QUE HAYAN CAMBIOS
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     #MOSTRAR LAS CADENAS SQL
     show-sql: true
     properties:
@@ -29,4 +29,6 @@ spring:
 jwt:
   secret-key: 03db96010ae65496b4e7190c600f41a272d7facc1b029e64a238ee80d1b74d67
   user: AUTH-0
+  duration-min: 20
+refresh-token:
   duration-min: 20

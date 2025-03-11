@@ -1,10 +1,10 @@
 package org.library.auth.service;
 
-import org.library.auth.dto.LoginRequest;
-import org.library.auth.dto.LoginSuccess;
+import org.library.auth.dto.LoginRequestDto;
+import org.library.auth.dto.LoginSuccessDto;
 
 public interface IAuthQryService {
 
-    LoginSuccess login(LoginRequest loginRequest);
+    LoginSuccessDto login(LoginRequestDto loginRequestDto);
 
 }

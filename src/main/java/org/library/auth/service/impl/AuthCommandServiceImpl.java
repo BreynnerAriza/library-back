@@ -5,7 +5,7 @@ import org.library.auth.dto.RefreshTokenDto;
 import org.library.auth.dto.LoginSuccessDto;
 import org.library.auth.exception.TokenInvalidException;
 import org.library.auth.jwt.service.JwtService;
-import org.library.auth.service.IAuthCmdService;
+import org.library.auth.service.IAuthCommandService;
 import org.library.refreshtoken.entity.RefreshToken;
 import org.library.refreshtoken.service.IRefreshTokenCmdService;
 import org.library.refreshtoken.service.IRefreshTokenQryService;
@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class AuthCmdService implements IAuthCmdService {
+public class AuthCommandServiceImpl implements IAuthCommandService {
 
     private final JwtService jwtService;
     private final IRefreshTokenCmdService refreshTokenCmdService;

@@ -1,6 +1,7 @@
 package org.library.shared.exceptionhandler;
 
 import org.library.auth.exception.InvalidCredentialException;
+import org.library.auth.exception.TokenInvalidException;
 import org.library.auth.exception.UserDisabledException;
 import org.library.shared.dto.RequestFailed;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,13 @@ public class AppExceptionHandler {
     @ExceptionHandler(UserDisabledException.class)
     public ResponseEntity<RequestFailed> userDisabledException(UserDisabledException ex){
         return ResponseEntity.status(HttpStatus.FORBIDDEN.value()).body(
+                new RequestFailed(List.of(ex.getMessage()))
+        );
+    }
+
+    @ExceptionHandler(TokenInvalidException.class)
+    public ResponseEntity<RequestFailed> tokenInvalidException(TokenInvalidException ex){
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED.value()).body(
                 new RequestFailed(List.of(ex.getMessage()))
         );
     }

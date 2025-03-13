@@ -1,0 +1,2 @@
+INSERT INTO main.module (module_id, name, route, icon, description, created_at, updated_at) VALUES('550e8400-e29b-41d4-a716-446655440000','Libros','/libros','bx bxs-book', 'Permite administrar libros', now(), now());
+INSERT INTO main.module (module_id, name, route, icon, description, created_at, updated_at) VALUES('f2994107-eb74-420e-89d9-d86e0669adee','Usuarios','/users','bx bxs-user-detail', 'Permite administrar usuarios', now(), now());

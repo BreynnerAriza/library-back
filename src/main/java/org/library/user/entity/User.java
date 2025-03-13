@@ -14,7 +14,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "user", schema = "main")
 @AllArgsConstructor @NoArgsConstructor
-@Setter @Getter
+@Getter
 public class User extends Audit {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)
@@ -31,7 +31,7 @@ public class User extends Audit {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 

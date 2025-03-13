@@ -2,9 +2,8 @@ package org.library.auth.service;
 
 import org.library.auth.dto.RefreshTokenDto;
 import org.library.auth.dto.LoginSuccessDto;
-import org.library.user.entity.User;
 
-public interface IAuthCmdService {
+public interface IAuthCommandService {
 
     LoginSuccessDto refreshToken(RefreshTokenDto accessToken);
 

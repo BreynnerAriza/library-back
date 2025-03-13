@@ -38,9 +38,10 @@ public class RefreshToken extends Audit {
         this.user = user;
     }
 
-    public boolean isValid(){
-        return expiredAt.isBefore(LocalDateTime.now());
+    public boolean isValid() {
+        return expiredAt.isAfter(LocalDateTime.now());
     }
+
 
     private LocalDateTime calculateExpiredAt(Long refreshTokenDuration){
         return LocalDateTime.now().plus(Duration.ofMinutes(refreshTokenDuration));
